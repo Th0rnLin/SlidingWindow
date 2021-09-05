@@ -1,13 +1,13 @@
 import win32gui, win32api
 
-class SildingWindow():
+class SlidingWindow():
     def __init__(self, Name, Range):
         self.x_move=True
         self.y_move=True
         self.Name=Name
         self.Range=Range
     
-    def silding_window(self, hwnd, lPara):
+    def sliding_window(self, hwnd, lPara):
         print(self.x_move, self.y_move)
         if win32gui.IsWindowVisible(hwnd) and win32gui.GetWindowText(hwnd)==self.Name:
             rect=win32gui.GetWindowRect(hwnd)
@@ -35,8 +35,8 @@ def show_name():
 if __name__=='__main__':
     #show_name()
     
-    sw=SildingWindow('SildingWindow', 3)
-    sw2=SildingWindow('Python', 3)
+    sw=SlidingWindow('SlidingWindow', 3)
+    sw2=SlidingWindow('Python', 3)
     while True:
-        win32gui.EnumWindows(sw.silding_window, None)
-        win32gui.EnumWindows(sw2.silding_window, None)
+        win32gui.EnumWindows(sw.sliding_window, None)
+        win32gui.EnumWindows(sw2.sliding_window, None)
